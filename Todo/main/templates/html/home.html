@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body>
+    <h1>TODO app</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name='title' placeholder="title"> <br> <br>
+        <textarea name="task" id="new_task" cols="30" rows="10" placeholder="New Task"></textarea> <br> <br>
+        <input type="date" name="date"> <br> <br>
+        <button type="submit" >submit</button>
+    </form>
+    <h2>Tasks</h2>
+    <div class="task_list">
+        {% for obj in tasks %}
+        <div class="task">
+            <h3>{{ obj.title }}</h3> <br>
+            <p>{{ obj.task }}</p>
+            <div class="time">
+                <p>{{ obj.date }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
