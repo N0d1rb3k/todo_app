@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Tododb
 # Create your views here.
 def home(request):
@@ -8,5 +8,8 @@ def home(request):
         date = request.POST.get('date')
 
         Tododb.objects.create(title=title,task=task,date=date)
+
+        return redirect('home')
+
     all_tasks = Tododb.objects.all()
     return render(request,'html/home.html',{'tasks':all_tasks})
