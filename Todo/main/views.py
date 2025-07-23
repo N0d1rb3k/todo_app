@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect , get_object_or_404
 from .models import Tododb
 # Create your views here.
 def home(request):
@@ -13,3 +13,8 @@ def home(request):
 
     all_tasks = Tododb.objects.all()
     return render(request,'html/home.html',{'tasks':all_tasks})
+
+def delete(request,id):
+    item = get_object_or_404(Tododb,id=id)
+    item.delete()
+    return redirect('home')
