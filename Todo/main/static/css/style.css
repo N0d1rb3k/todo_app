@@ -85,3 +85,58 @@ button:hover {
     font-size: 14px;
     color: #888;
 }
+
+.main-layout {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Form and task list */
+form, .task_list {
+    flex: 1 1 400px;
+    max-width: 500px;
+}
+
+/* Responsive Typography */
+h1, h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+/* Buttons responsive */
+button {
+    width: 100%;
+}
+
+/* Make textarea resize nicely */
+textarea {
+    resize: vertical;
+}
+
+/* Make tasks readable on mobile */
+.task {
+    word-wrap: break-word;
+}
+
+/* Optional: make input/textarea more compact on mobile */
+@media (max-width: 600px) {
+    input[type="text"],
+    textarea,
+    input[type="date"],
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    form, .task_list {
+        width: 100%;
+    }
+
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+}
