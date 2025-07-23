@@ -115,6 +115,14 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
+# For production - where collectstatic will put all static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# For development - tells Django where to look for additional static files
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'main', 'static'),
+]
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
