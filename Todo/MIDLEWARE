@@ -1,1 +1,5 @@
-'whitenoise.middleware.WhiteNoiseMiddleware',
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    ...
+]
