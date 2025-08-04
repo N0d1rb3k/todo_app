@@ -118,4 +118,4 @@ Todo/
 
 This project is licensed under the **MIT License**.
 
-👤 Author: [Nodirbek](https://github.com/N0d1rb3k)
+👤 Author: [Nodirbek Xonimqulov](https://github.com/N0d1rb3k)
